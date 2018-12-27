@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="./main.css"></link>
+
+  <title>Kategorie dla importu redcart</title>
+</head>
+<body>
+  <div class="container">
+    <div class="">
+      <textarea name="product-ids" class="products-ids" cols="30" rows="10"></textarea>
+      <br>
+      <button class="confirm-button" onclick="applyIds()">Apply</button>
+      <div>Ilość produktów: <span class="counter">0</span></div>
+      <br>
+      <button class="load-button" onclick="load()">Load last save</button>
+    </div>
+
+    <div class="">
+      <ol class="catList">
+        <li>h</li>
+      </ol>
+    </div>
+  </div>
+  <!-- products ids -->
+  <ul class="ids"></ul>
+
+
+  <button class="save-button" onclick="save()">Save</button>
+  <button class="extract-button" onclick="extract()">Extract to CSV</button>
+
+  <script src="./main.js"></script>
+</body>
+</html>
