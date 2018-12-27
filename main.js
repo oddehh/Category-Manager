@@ -1,4 +1,4 @@
-//dummy data hh
+//dummy data
 const testText = document.querySelector('.products-ids')
 testText.value = `456456
 546767
