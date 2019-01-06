@@ -48,7 +48,7 @@ function generateRows() {
 //save
 // wszystkie wartości - lista id tez - będą musiały być zapisywane i odtwarzane przy przeładowaniu
 function save() {
-  const categoriesArray = Array.from(document.querySelectorAll('input'), input => input.value.replace(' ', '').split(',') ) // input.value ? [parseInt(input.value.split(','), 10)] : [])
+  const categoriesArray = Array.from(document.querySelectorAll('input'), input => input.value.replace(' ', '').split(',') )
   localStorage.setItem("categoriesArray",JSON.stringify(categoriesArray))
   console.log(categoriesArray)
   console.log('saved!')
@@ -63,12 +63,12 @@ function load() {
 
 
 //extract
-function extract( ) {
+function extract() {
   const prodIdsArr = Array.from(document.querySelectorAll('ul.ids li'), li => li.textContent)
-  const catNamesArr = Array.from(document.querySelectorAll('ul.ids li input'), inp => inp.value.replace(' ', '').split(',')) //usnąłem [] wrappujące imp.value.split bo już jest to robione jako Arrah.from.
+  const catNamesArr = Array.from(document.querySelectorAll('ul.ids li input'), inp => inp.value.replace(' ', '').split(','))
   catNamesArr.forEach( (numsA,i) => {
     numsA.forEach(num => {
-     console.log( num + "\t" + prodIdsArr[i] )
+     console.log(`${prodIdsArr[i]}\t${categoryPath} ${categories[num]}` )
 
     })
   })
