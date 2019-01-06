@@ -54,15 +54,13 @@ function generateRows() {
 
 //extract
 function extract() {
-  const prodIdsArr = Array.from(document.querySelectorAll('ul.ids li'), li => li.textContent)
-  const catNamesArr = Array.from(document.querySelectorAll('ul.ids li input'), input => input.value.replace(' ', '').split(',') )
-  console.log("catNamesArr: ",catNamesArr)
-  catNamesArr.forEach( (numsA,i) => {
+  const productIdsArr = Array.from(document.querySelectorAll('ul.ids li'), li => li.textContent)
+  const categoryNamesArr = Array.from(document.querySelectorAll('ul.ids li input'), input => input.value.replace(' ', '').split(',') )
+  console.log("categoryNamesArr: ",categoryNamesArr)
+  categoryNamesArr.forEach( (numsA,i) => {
     numsA.forEach(num => {
-      if(num === "") {
-        // skip
-      } else {
-        console.log(`${prodIdsArr[i]}\t${categoryPath} ${categories[num-1]}` )
+      if( num > 0 && num <= categories.length ) {
+        console.log(`${productIdsArr[i]}\t${categoryPath} ${categories[num-1]}` )
         //console log do zamienienia na push to temp array i zapisania na dysku
       }
     })
@@ -70,7 +68,7 @@ function extract() {
 
 }
 
-//console.log(extract(prodIdsArr,catNamesArr))
+//console.log(extract(productIdsArr,categoryNamesArr))
 
 
 
