@@ -13,23 +13,19 @@ counter.innerText = testText.value.trim().split('\n').length
 const categoryPath = "Szukaj tapety po wzorze/Wzory"
 const categories = ["dziecięce","geometryczne","imitacje","napisy","ornamenty","pasy","roślinne","zwierzęce","abstrakcyjne","krata","jednolite i koordynaty","koniczyna marokańska","egzotyczne"]
 
-function catListDisplay(arr) {
-  const catList = document.querySelector('ol.catList')
-  catList.innerHTML = ''
+function categoryListDisplay(arr) {
+  const categoryList = document.querySelector('ol.categoryList')
+  categoryList.innerHTML = ''
 
   for (cat of arr) {
     const catLi = document.createElement('li')
     catLi.innerText = cat
-    catList.appendChild(catLi)
+    categoryList.appendChild(catLi)
   }
 }
-catListDisplay(categories)
+categoryListDisplay(categories)
 
-
-
-
-
-function applyIds() {
+function generateRows() {
   const ids = document.querySelector('.products-ids').value.trim().split('\n')
   console.log(ids)
 
