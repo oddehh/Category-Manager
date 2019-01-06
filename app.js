@@ -45,6 +45,31 @@ function generateRows() {
 //get categories
 // >>przerzuciłem do save()
 
+
+/*
+
+!! wydaje się jednak, że fragment zbierający dane z inputu powinien być osobno od -save i -extract i tylko przekazywany tym funkcjom.
+
+*/
+
+//extract
+function extract() {
+  const prodIdsArr = Array.from(document.querySelectorAll('ul.ids li'), li => li.textContent)
+  const catNamesArr = Array.from(document.querySelectorAll('ul.ids li input'), inp => inp.value.replace(' ', '').split(','))
+  catNamesArr.forEach( (numsA,i) => {
+    numsA.forEach(num => {
+     console.log(`${prodIdsArr[i]}\t${categoryPath} ${categories[num]}` )
+
+    })
+  })
+
+}
+
+//console.log(extract(prodIdsArr,catNamesArr))
+
+
+
+
 //save
 // wszystkie wartości - lista id tez - będą musiały być zapisywane i odtwarzane przy przeładowaniu
 function save() {
@@ -62,20 +87,7 @@ function load() {
 }
 
 
-//extract
-function extract() {
-  const prodIdsArr = Array.from(document.querySelectorAll('ul.ids li'), li => li.textContent)
-  const catNamesArr = Array.from(document.querySelectorAll('ul.ids li input'), inp => inp.value.replace(' ', '').split(','))
-  catNamesArr.forEach( (numsA,i) => {
-    numsA.forEach(num => {
-     console.log(`${prodIdsArr[i]}\t${categoryPath} ${categories[num]}` )
 
-    })
-  })
-
-}
-
-//console.log(extract(prodIdsArr,catNamesArr))
 
 //dodawanie i usuwanie id
 
