@@ -56,7 +56,7 @@ function generateRows() {
 function extract() {
   const productIdsArr = Array.from(document.querySelectorAll('ul.ids li'), li => li.textContent)
   const categoryNamesArr = Array.from(document.querySelectorAll('ul.ids li input'), input => input.value.replace(' ', '').split(',') )
-  console.log("categoryNamesArr: ",categoryNamesArr)
+
   categoryNamesArr.forEach( (numsA,i) => {
     numsA.forEach(num => {
       if( num > 0 && num <= categories.length ) {
